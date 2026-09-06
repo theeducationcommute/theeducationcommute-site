@@ -602,6 +602,8 @@ const NEWSLETTER = [
   {img:'_gated/newsletter/ep42.png', free:false, ep:42, strand:'Teachers', title:'Storybooks, Board Games, And Maths'},
   {img:'_gated/newsletter/ep43.png', free:false, ep:43, strand:'Teachers', title:'The Problem With Problem-Solving'},
   {img:'_gated/newsletter/ep44.png', free:false, ep:44, strand:'Teachers', title:'One Padlock, Plus Five Months'},
+  {img:'_gated/newsletter/ep47.png', free:false, ep:47, strand:'Leaders', title:'The Code That Isn\'t Coming'},
+  {img:'_gated/newsletter/ep50.png', free:false, ep:50, strand:'Staff', title:'The Appointed Person'},
   {img:'_gated/newsletter/ep52.png', free:false, ep:52, strand:'Staff', title:'A Nagging Doubt Is Enough'},
   {img:'_gated/newsletter/ep53.png', free:false, ep:53, strand:'Global Pioneers', title:'The Dutch Did It First'},
   {img:'_gated/newsletter/ep54.png', free:false, ep:54, strand:'Parents & Carers', title:'The Attendance Letter, Explained'},
@@ -660,6 +662,8 @@ const NEWSLETTER_PARENTS = [
   {img:'_gated/newsletter-parents/pep42.png', free:false, ep:42, strand:'Parents & Carers', title:'Why maths at home doesn\'t need a worksheet'},
   {img:'_gated/newsletter-parents/pep43.png', free:false, ep:43, strand:'Parents & Carers', title:'Why fewer maths problems can mean more learning'},
   {img:'_gated/newsletter-parents/pep44.png', free:false, ep:44, strand:'Parents & Carers', title:'Group work: when it helps and when it\'s just noise'},
+  {img:'_gated/newsletter-parents/pep47.png', free:false, ep:47, strand:'Parents & Carers', title:'The SEND Code of Practice — is a new one coming?'},
+  {img:'_gated/newsletter-parents/pep50.png', free:false, ep:50, strand:'Parents & Carers', title:'Who looks after your child if they\'re hurt at school?'},
   {img:'_gated/newsletter-parents/pep52.png', free:false, ep:52, strand:'Parents & Carers', title:'What schools must do when an adult\'s behaviour causes \'a nagging doubt\''},
   {img:'_gated/newsletter-parents/pep53.png', free:false, ep:53, strand:'Parents & Carers', title:'Phones are banned all day now — here\'s what another country found'},
   {img:'_gated/newsletter-parents/pep54.png', free:false, ep:54, strand:'Parents & Carers', title:'The attendance letter, explained'},
@@ -774,7 +778,7 @@ function buildPills(){
 }
 
 // bump NL_V whenever the one-pager PNGs change — busts every visitor's image cache
-const NL_V = '35';
+const NL_V = '36';
 let UNLOCKED = false;
 
 function buildNewsletter(list){
