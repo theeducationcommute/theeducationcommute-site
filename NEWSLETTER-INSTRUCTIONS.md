@@ -87,14 +87,18 @@ Open `site/index.html` and find the `NEWSLETTER` array (staffroom) and `NEWSLETT
 
 **Then bump the cache-buster** — find `const NL_V = '7';` near the top of the newsletter code and increment it (e.g. `'8'`). This is what forces visitors' browsers to fetch the new images instead of showing a stale cached copy. Skipping this step is the single most common cause of "the website isn't showing my new newsletter."
 
-## 5. Rebuild and redeploy
+## 5. Deploy (since 7 Sep 2026: commit to GitHub — no zip, no Cloudflare upload)
 
-```bash
-cd site
-zip -r ../education-commute-site.zip . -x ".*"
-```
+The live site deploys automatically from the GitHub repo **theeducationcommute/theeducationcommute-site** (branch `main`) via Cloudflare Pages project `theeducationcommute-site`. Every commit to `main` goes live in about a minute.
 
-Then in the Cloudflare dashboard: **Workers & Pages → theeducationcommute → Create deployment**, upload the zip, and wait for "Success! Your site was built and deployed to: https://theeducationcommute.pages.dev". The custom domain (theeducationcommute.co.uk) picks it up automatically — no separate step.
+`deploy-site/` on disk is the working copy; the repo must match it. To ship a new episode, add/commit these files to the repo at the same paths:
+
+- `index.html` (with the new array entries and bumped `NL_V`)
+- `_gated/newsletter/epNN.png` and `_gated/newsletter-parents/pepNN.png` (or `assets/…` if the episode is free)
+
+Easiest without git installed: on github.com open the repo → navigate into the target folder → **Add file → Upload files** → drop the file(s) — the files themselves, **never a folder** (a dropped folder is recreated inside the repo and the real files are not updated) → write a short commit message → **Commit changes**. Do `index.html` in its own commit *after* the PNGs so the site never references an image that isn't there yet. Then watch Cloudflare → Workers & Pages → theeducationcommute-site → Deployments until the new commit shows a green tick.
+
+Never use the old direct-upload project `theeducationcommute` — its domains have been removed and it is kept only as a fallback.
 
 ## 6. Check it live
 
