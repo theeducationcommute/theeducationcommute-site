@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /_gated/
+Disallow: /unlocked
+Disallow: /api/
+
+Sitemap: https://theeducationcommute.co.uk/sitemap.xml

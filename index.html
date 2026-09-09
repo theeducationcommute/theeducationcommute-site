@@ -247,6 +247,44 @@ footer .fine{margin-top:28px;border-top:1px solid var(--line);padding-top:16px}
   .about-txt{text-align:left}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "PodcastSeries",
+      "@id": "https://theeducationcommute.co.uk/#podcast",
+      "name": "The Education Commute",
+      "url": "https://theeducationcommute.co.uk/",
+      "description": "Turning the research you don't have time to read into your 20-minute journey to work. Evidence-based education research for UK teachers, Sencos, school leaders, support staff and parents \u2014 every figure traced to a named public body.",
+      "inLanguage": "en-GB",
+      "webFeed": "https://media.rss.com/the-education-commute/feed.xml",
+      "image": "https://theeducationcommute.co.uk/assets/show-cover.png",
+      "author": { "@id": "https://theeducationcommute.co.uk/#org" },
+      "publisher": { "@id": "https://theeducationcommute.co.uk/#org" },
+      "sameAs": [
+        "https://rss.com/podcasts/the-education-commute/"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://theeducationcommute.co.uk/#org",
+      "name": "The Education Commute",
+      "url": "https://theeducationcommute.co.uk/",
+      "logo": "https://theeducationcommute.co.uk/assets/show-cover.png",
+      "email": "newsletter@theeducationcommute.co.uk"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://theeducationcommute.co.uk/#website",
+      "url": "https://theeducationcommute.co.uk/",
+      "name": "The Education Commute",
+      "publisher": { "@id": "https://theeducationcommute.co.uk/#org" },
+      "inLanguage": "en-GB"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -602,7 +640,11 @@ const NEWSLETTER = [
   {img:'_gated/newsletter/ep42.png', free:false, ep:42, strand:'Teachers', title:'Storybooks, Board Games, And Maths'},
   {img:'_gated/newsletter/ep43.png', free:false, ep:43, strand:'Teachers', title:'The Problem With Problem-Solving'},
   {img:'_gated/newsletter/ep44.png', free:false, ep:44, strand:'Teachers', title:'One Padlock, Plus Five Months'},
+  {img:'_gated/newsletter/ep45.png', free:false, ep:45, strand:'Leaders', title:'Six Months On, Still Waiting'},
+  {img:'_gated/newsletter/ep46.png', free:false, ep:46, strand:'Leaders', title:'Not Before September 2030'},
   {img:'_gated/newsletter/ep47.png', free:false, ep:47, strand:'Leaders', title:'The Code That Isn\'t Coming'},
+  {img:'_gated/newsletter/ep48.png', free:false, ep:48, strand:'Teachers', title:'The Shape of the Year'},
+  {img:'_gated/newsletter/ep49.png', free:false, ep:49, strand:'Leaders', title:'Everything Else Is Weather'},
   {img:'_gated/newsletter/ep50.png', free:false, ep:50, strand:'Staff', title:'The Appointed Person'},
   {img:'_gated/newsletter/ep52.png', free:false, ep:52, strand:'Staff', title:'A Nagging Doubt Is Enough'},
   {img:'_gated/newsletter/ep53.png', free:false, ep:53, strand:'Global Pioneers', title:'The Dutch Did It First'},
@@ -662,7 +704,11 @@ const NEWSLETTER_PARENTS = [
   {img:'_gated/newsletter-parents/pep42.png', free:false, ep:42, strand:'Parents & Carers', title:'Why maths at home doesn\'t need a worksheet'},
   {img:'_gated/newsletter-parents/pep43.png', free:false, ep:43, strand:'Parents & Carers', title:'Why fewer maths problems can mean more learning'},
   {img:'_gated/newsletter-parents/pep44.png', free:false, ep:44, strand:'Parents & Carers', title:'Group work: when it helps and when it\'s just noise'},
+  {img:'_gated/newsletter-parents/pep45.png', free:false, ep:45, strand:'Parents & Carers', title:'The SEND changes — what has actually happened so far'},
+  {img:'_gated/newsletter-parents/pep46.png', free:false, ep:46, strand:'Parents & Carers', title:'When do the SEND changes actually start?'},
   {img:'_gated/newsletter-parents/pep47.png', free:false, ep:47, strand:'Parents & Carers', title:'The SEND Code of Practice — is a new one coming?'},
+  {img:'_gated/newsletter-parents/pep48.png', free:false, ep:48, strand:'Parents & Carers', title:'What a whole year of school attendance actually looks like'},
+  {img:'_gated/newsletter-parents/pep49.png', free:false, ep:49, strand:'Parents & Carers', title:'School budgets and the Budget — what\'s already decided'},
   {img:'_gated/newsletter-parents/pep50.png', free:false, ep:50, strand:'Parents & Carers', title:'Who looks after your child if they\'re hurt at school?'},
   {img:'_gated/newsletter-parents/pep52.png', free:false, ep:52, strand:'Parents & Carers', title:'What schools must do when an adult\'s behaviour causes \'a nagging doubt\''},
   {img:'_gated/newsletter-parents/pep53.png', free:false, ep:53, strand:'Parents & Carers', title:'Phones are banned all day now — here\'s what another country found'},
@@ -778,7 +824,7 @@ function buildPills(){
 }
 
 // bump NL_V whenever the one-pager PNGs change — busts every visitor's image cache
-const NL_V = '36';
+const NL_V = '37';
 let UNLOCKED = false;
 
 function buildNewsletter(list){
