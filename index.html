@@ -996,6 +996,23 @@ document.querySelectorAll('.ntab').forEach(t => t.addEventListener('click', ()=>
   t.classList.add('active');
   buildNewsletter(t.dataset.set === 'parents' ? NEWSLETTER_PARENTS : NEWSLETTER);
 }));
+
+// Deep links into the newsletter section.
+//   #newsletter          -> section, default (parents) tab
+//   #newsletter-parents  -> section, parents tab
+//   #newsletter-staff    -> section, staffroom tab
+// Those two hashes are not element ids, so the scroll is done here rather than by the browser.
+function applyNewsletterHash(){
+  var h = (location.hash || '').toLowerCase();
+  if (h !== '#newsletter-staff' && h !== '#newsletter-parents') return;
+  var want = (h === '#newsletter-staff') ? 'staff' : 'parents';
+  var tab = document.querySelector('.ntab[data-set="' + want + '"]');
+  if (tab && !tab.classList.contains('active')) tab.click();
+  var sec = document.getElementById('newsletter');
+  if (sec) sec.scrollIntoView({behavior:'smooth', block:'start'});
+}
+applyNewsletterHash();
+window.addEventListener('hashchange', applyNewsletterHash);
 </script>
 </body>
 </html>
