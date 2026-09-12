@@ -886,7 +886,12 @@ let UNLOCKED = false;
 function buildNewsletter(list){
   const g = document.getElementById('ngrid');
   g.innerHTML = '';
-  for (const n of list.slice().reverse()){
+  // Newest first. For a visitor who hasn't unlocked yet, float the free samples
+  // to the top so there is something openable above the fold.
+  const rows = list.slice().reverse();
+  const ordered = UNLOCKED ? rows
+                           : rows.filter(n => n.free).concat(rows.filter(n => !n.free));
+  for (const n of ordered){
     const locked = !n.free && !UNLOCKED;
     const src = n.img + '?v=' + NL_V;
     const c = document.createElement('article');
